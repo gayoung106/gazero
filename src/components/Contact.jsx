@@ -1,5 +1,13 @@
 import React from "react";
 
+const contactText = [
+  {
+    link: "https://open.kakao.com/o/sPKynVof",
+    title: " KAKAO : Gazero(Frontend)",
+  },
+  { link: "mailto:soongin95@naver.com", title: " mail : SOONGIN95@NAVER.COM" },
+];
+
 const Contact = () => {
   return (
     <section id="contact">
@@ -16,24 +24,13 @@ const Contact = () => {
         </div>
         <div className="contact__text">
           <div className="text">
-            <div>
-              <a
-                href="https://open.kakao.com/o/sPKynVof"
-                target="_blank"
-                rel="noreferrer"
-              >
-                KAKAO : Gazero(Frontend)
-              </a>
-            </div>
-            <div>
-              <a
-                href="mailto:soongin95@naver.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                mail : SOONGIN95@NAVER.COM
-              </a>
-            </div>
+            {contactText.map((contact, key) => (
+              <div key={key}>
+                <a href={contact.link} target="_blank" rel="noreferrer">
+                  {contact.title}
+                </a>
+              </div>
+            ))}
           </div>
         </div>
         <div className="contact__lines bottom" aria-hidden="true">
